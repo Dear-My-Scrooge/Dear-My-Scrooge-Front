@@ -29,6 +29,8 @@ function Main() {
         </S.Future>
 
         <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
+
+        <S.Candle src={CandleIcon} alt="촛불 아이콘" />
       </S.MainWrapper>
     </>
   );

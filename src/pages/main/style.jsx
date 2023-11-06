@@ -125,3 +125,11 @@ export const CreatePage = styled.div`
   line-height: 26.3px;
   margin-top: 27px;
 `;
+
+// 촛불 - about 페이지 버튼
+export const Candle = styled.img`
+  display: flex;
+  width: 72px;
+  height: 99px;
+  margin-top: 6px;
+`;
