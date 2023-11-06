@@ -82,3 +82,29 @@ export const PresentText = styled.div`
   margin-left: 45px;
   margin-right: 80px;
 `;
+
+// 미래
+export const Future = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  width: 352px;
+  height: 135px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #083a00;
+`;
+
+export const FutureImg = styled.img`
+  width: 104px;
+  height: 104px;
+  margin-left: 32px;
+  margin-right: 102px;
+`;
+
+export const FutureText = styled.div`
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+`;
