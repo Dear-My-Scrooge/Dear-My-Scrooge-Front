@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as S from "./style";
 
 import PastIcon from "../../assets/images/character/past.png";
@@ -13,24 +14,34 @@ function Main() {
         <S.Title>수연's 스크루지</S.Title>
         <S.SubTitle>78번째 방문자에요 :)</S.SubTitle>
 
-        <S.Past>
-          <S.PastImg src={PastIcon} alt="과거 캐릭터" />
-          <S.PastText>Past</S.PastText>
-        </S.Past>
+        <Link to="/past">
+          <S.Past>
+            <S.PastImg src={PastIcon} alt="과거 캐릭터" />
+            <S.PastText>Past</S.PastText>
+          </S.Past>
+        </Link>
 
-        <S.Present>
-          <S.PresentText>Present</S.PresentText>
-          <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
-        </S.Present>
+        <Link to="/present">
+          <S.Present>
+            <S.PresentText>Present</S.PresentText>
+            <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
+          </S.Present>
+        </Link>
 
-        <S.Future>
-          <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
-          <S.FutureText>Future</S.FutureText>
-        </S.Future>
+        <Link to="/future">
+          <S.Future>
+            <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
+            <S.FutureText>Future</S.FutureText>
+          </S.Future>
+        </Link>
 
-        <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
+        <Link to="/signup">
+          <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
+        </Link>
 
-        <S.Candle src={CandleIcon} alt="촛불 아이콘" />
+        <Link to="/about">
+          <S.Candle src={CandleIcon} alt="촛불 아이콘" />
+        </Link>
       </S.MainWrapper>
     </>
   );
