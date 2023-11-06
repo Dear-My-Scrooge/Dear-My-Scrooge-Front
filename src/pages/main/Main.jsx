@@ -12,6 +12,11 @@ function Main() {
       <S.MainWrapper>
         <S.Title>수연's 스크루지</S.Title>
         <S.SubTitle>78번째 방문자에요 :)</S.SubTitle>
+
+        <S.Past>
+          <S.PastImg src={PastIcon} alt="과거 캐릭터" />
+          <S.PastText>Past</S.PastText>
+        </S.Past>
       </S.MainWrapper>
     </>
   );
