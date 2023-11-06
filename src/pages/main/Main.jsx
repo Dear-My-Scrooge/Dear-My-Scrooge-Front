@@ -17,6 +17,11 @@ function Main() {
           <S.PastImg src={PastIcon} alt="과거 캐릭터" />
           <S.PastText>Past</S.PastText>
         </S.Past>
+
+        <S.Present>
+          <S.PresentText>Present</S.PresentText>
+          <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
+        </S.Present>
       </S.MainWrapper>
     </>
   );

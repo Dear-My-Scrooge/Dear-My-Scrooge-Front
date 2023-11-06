@@ -56,3 +56,29 @@ export const PastText = styled.div`
   font-weight: 400;
   line-height: normal;
 `;
+
+// 현재
+export const Present = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  width: 352px;
+  height: 135px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #810006;
+`;
+
+export const PresentImg = styled.img`
+  width: 129px;
+  height: 129px;
+`;
+
+export const PresentText = styled.div`
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 45px;
+  margin-right: 80px;
+`;
