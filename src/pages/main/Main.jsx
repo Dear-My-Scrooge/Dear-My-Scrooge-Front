@@ -27,6 +27,8 @@ function Main() {
           <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
           <S.FutureText>Future</S.FutureText>
         </S.Future>
+
+        <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
       </S.MainWrapper>
     </>
   );

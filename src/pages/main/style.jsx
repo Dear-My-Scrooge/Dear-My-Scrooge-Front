@@ -108,3 +108,20 @@ export const FutureText = styled.div`
   font-weight: 400;
   line-height: normal;
 `;
+
+// 페이지 만들기 버튼
+export const CreatePage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 204px;
+  height: 38px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #010422;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26.3px;
+  margin-top: 27px;
+`;
