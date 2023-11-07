@@ -75,3 +75,9 @@ export const NicknameCnt = styled.div`
 export const NicknameInputWrapper = styled.div`
   position: relative;
 `;
+
+export const CandleWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 72px;
+`;

@@ -124,6 +124,7 @@ export const CreatePage = styled.div`
   font-weight: 400;
   line-height: 26.3px;
   margin-top: 27px;
+  margin-bottom: 109px;
 `;
 
 // 촛불 - about 페이지 버튼
@@ -132,4 +133,17 @@ export const Candle = styled.img`
   width: 72px;
   height: 99px;
   margin-top: 6px;
+`;
+
+export const CandleWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 72px;
+`;
+
+export const MainContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

@@ -25,7 +25,9 @@ function Nickname() {
         </S.NicknameInputWrapper>
         <S.SendButton>보내기</S.SendButton>
 
-        <Candle />
+        <S.CandleWrapper>
+          <Candle />
+        </S.CandleWrapper>
       </S.NicknameWrapper>
     </>
   );

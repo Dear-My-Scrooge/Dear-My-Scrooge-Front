@@ -6,8 +6,7 @@ export const Candle = styled.img`
   width: 72px;
 `;
 
-export const CandleWrapper = styled.div`
-  position: fixed;
-  bottom: 0;
-  width: 72px;
-`;
+// export const CandleWrapper = styled.div`
+//   position: fixed;
+//   bottom: 0;
+// `;
