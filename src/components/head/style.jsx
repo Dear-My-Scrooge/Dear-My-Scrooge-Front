@@ -10,6 +10,8 @@ export const HeadWrapper = styled.div`
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 export const HeadTitle = styled.div`
+  display: flex;
+  align-items: flex-start;
   color: #fff;
   font-size: 30px;
   font-weight: 400;
