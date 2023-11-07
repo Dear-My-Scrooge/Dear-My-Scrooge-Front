@@ -6,7 +6,7 @@ export const HeadWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 88px;
-  background: #083a00;
+  background: ${props => props.color};
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 export const HeadTitle = styled.div`

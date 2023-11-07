@@ -5,7 +5,7 @@ export const SendWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 30px;
+  padding: 30px 30px 0px 30px;
   margin-top: 73px;
 `;
 
@@ -14,7 +14,6 @@ export const SendTextareaWrapper = styled.div`
   bottom: 0px;
   color: #000;
   text-align: center;
-
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
