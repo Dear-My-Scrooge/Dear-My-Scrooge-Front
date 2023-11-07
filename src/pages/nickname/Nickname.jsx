@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
+import Candle from "../../components/candle/Candle";
 
 function Nickname() {
   let [inputCount, setInputCount] = useState(0);
@@ -23,6 +24,10 @@ function Nickname() {
           <S.NicknameCnt>{inputCount} / 10</S.NicknameCnt>
         </S.NicknameInputWrapper>
         <S.SendButton>보내기</S.SendButton>
+
+        <S.CandleWrapper>
+          <Candle />
+        </S.CandleWrapper>
       </S.NicknameWrapper>
     </>
   );
