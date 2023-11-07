@@ -8,7 +8,7 @@ function Future() {
   return (
     <>
       <S.FutureWrapper>
-        <Head color={"#083A00"} />
+        <Head bgcolor={"#083A00"} color={"#fff"} />
         <S.FutureQuestion>
           Q. 미래 수연은 <br />
           어떻게 성장해 있을까요?

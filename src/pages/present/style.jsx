@@ -18,7 +18,7 @@ export const PresentQuestionWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+
   margin-bottom: -70px;
 `;
 

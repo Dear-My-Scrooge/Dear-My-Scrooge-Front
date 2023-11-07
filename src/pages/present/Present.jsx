@@ -10,7 +10,7 @@ function Present() {
   return (
     <>
       <S.PresentWrapper>
-        <Head color={"#810006"} />
+        <Head bgcolor={"#810006"} color={"#fff"} />
         <S.PresentQuestionWrapper>
           <S.PresentQuestion>
             Q. 오늘 수연에게 <br />

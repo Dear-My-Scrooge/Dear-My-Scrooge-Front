@@ -5,8 +5,8 @@ function Head(props) {
   return (
     <>
       <>
-        <S.HeadWrapper color={props.color}>
-          <S.HeadTitle>수연's 스크루지</S.HeadTitle>
+        <S.HeadWrapper bgcolor={props.bgcolor}>
+          <S.HeadTitle color={props.color}>수연's 스크루지</S.HeadTitle>
         </S.HeadWrapper>
       </>
     </>

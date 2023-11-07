@@ -33,6 +33,7 @@ export const SendTextarea = styled.textarea`
   line-height: normal;
   resize: none;
   font-family: "Nanum_DaSiSiJagHae";
+  border: none;
 `;
 
 export const SendTextCnt = styled.div`
