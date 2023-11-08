@@ -10,6 +10,7 @@ import Past from "./pages/past/Past";
 import Present from "./pages/present/Present";
 import Future from "./pages/future/Future";
 import Nickname from "./pages/nickname/Nickname";
+import Mailbox from "./pages/mailbox/Mailbox";
 import NotFoundError from "./pages/error/NotFound";
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "nickname",
         element: <Nickname />
+      },
+      {
+        path: "mailbox",
+        element: <Mailbox />
       }
     ],
     errorElement: <NotFoundError />
