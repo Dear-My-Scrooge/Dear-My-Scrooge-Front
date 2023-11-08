@@ -15,10 +15,15 @@ function Mailbox() {
     else if (time === "미래") return "#083A00";
   };
 
+  const getColor = time => {
+    if (time === "과거") return "#000000";
+    else return "#FFFFFF";
+  };
+
   return (
     <>
       <S.MailboxWrapper>
-        <Head bgcolor={getBackgroundColor(time)} color={"#000"} />
+        <Head bgcolor={getBackgroundColor(time)} color={getColor(time)} />
       </S.MailboxWrapper>
     </>
   );
