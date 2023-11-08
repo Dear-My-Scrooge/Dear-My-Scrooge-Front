@@ -13,8 +13,27 @@ export const AboutWrapper = styled.div`
   align-items: center;
 `;
 
-export const NicknameInputWrapper = styled.div`
-  position: relative;
+export const AboutTitle = styled.div`
+  margin-top: 130px;
+  color: #fff;
+  text-align: center;
+  font-family: Nanum DaSiSiJagHae;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.5px;
+`;
+
+export const AboutContent = styled.div`
+  color: #fff;
+  text-align: center;
+  font-family: Nanum DaSiSiJagHae;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 46px;
 `;
 
 export const CandleWrapper = styled.div`
