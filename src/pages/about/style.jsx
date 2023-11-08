@@ -12,3 +12,13 @@ export const AboutWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const NicknameInputWrapper = styled.div`
+  position: relative;
+`;
+
+export const CandleWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 72px;
+`;
