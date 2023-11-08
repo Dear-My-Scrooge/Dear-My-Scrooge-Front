@@ -4,6 +4,7 @@ import Head from "../../components/head/Head";
 import PastBg from "../../assets/images/background/mailboxPast.png";
 import PresentBg from "../../assets/images/background/mailboxPresent.png";
 import FutureBg from "../../assets/images/background/mailboxFuture.png";
+import Accordion from "../../components/accordion/Accordion";
 
 function Mailbox() {
   const [time, setTime] = useState("과거");
@@ -53,6 +54,8 @@ function Mailbox() {
             미래
           </S.TimeTab>
         </S.TimeTabWrapper>
+
+        <Accordion />
       </S.MailboxWrapper>
     </>
   );
