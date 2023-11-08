@@ -39,6 +39,11 @@ export const AboutContent = styled.div`
 export const ClickMeImg = styled.img`
   width: 209px;
   margin-top: 60px;
+  &:hover {
+    transform: scale(1.1); /* 크기를 1.1배로 확대 (원하는 크기로 조절 가능) */
+    transition: transform 0.3s;
+  }
+  cursor: pointer;
 `;
 
 export const CandleWrapper = styled.div`
@@ -79,6 +84,7 @@ export const ModalCloseButton = styled.img`
   top: 20px;
   right: 20px;
   width: 22px;
+  cursor: pointer;
 `;
 
 export const ModalTitle = styled.div`
