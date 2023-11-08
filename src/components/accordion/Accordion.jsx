@@ -12,7 +12,7 @@ function Accordion() {
   return (
     <>
       <S.AccordionWrapper>
-        <S.AccordionQuestionWrapper>
+        <S.AccordionQuestionWrapper show={show}>
           <S.AccordionQuestion>
             Q. 과거 수연의 첫 수연의 첫 인상은?
           </S.AccordionQuestion>
@@ -21,9 +21,20 @@ function Accordion() {
           </S.AccordionMoreButton>
         </S.AccordionQuestionWrapper>
 
-        <S.AccordionAnswer className={show ? "show" : "hide"}>
-          gd
-        </S.AccordionAnswer>
+        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
+          <S.AccordionAnswer>
+            발랄했다.
+            <br /> s - 작심이 -
+          </S.AccordionAnswer>
+        </S.AccordionAnswerWrapper>
+
+        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
+          <S.AccordionAnswer>발랄했다. s - 작심이 -</S.AccordionAnswer>
+        </S.AccordionAnswerWrapper>
+
+        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
+          <S.AccordionLastAnswer>발랄했다. s - 작심이 -</S.AccordionLastAnswer>
+        </S.AccordionAnswerWrapper>
       </S.AccordionWrapper>
     </>
   );
