@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import * as S from "./style";
 import Candle from "../../components/candle/Candle";
 import ClickMeIcon from "../../assets/images/icon/clickMe.png";
+import CloseIcon from "../../assets/images/icon/x.png";
 
 function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <S.AboutWrapper>
@@ -15,11 +18,46 @@ function About() {
           당신은 어떤 말을 전하고 싶나요?
         </S.AboutContent>
 
-        <S.ClickMeImg src={ClickMeIcon} alt="클릭 아이콘" />
-
+        <S.ClickMeImg
+          onClick={() => setIsModalOpen(true)}
+          src={ClickMeIcon}
+          alt="클릭 아이콘"
+        />
         <S.CandleWrapper>
           <Candle />
         </S.CandleWrapper>
+
+        {isModalOpen && (
+          <>
+            <S.ModalBackground>
+              <S.ModalWrapper>
+                <S.ModalCloseButton
+                  onClick={() => setIsModalOpen(false)}
+                  src={CloseIcon}
+                  alt="닫힘 버튼"
+                />
+                <S.ModalTitle>About Us</S.ModalTitle>
+                <S.ModalContent>
+                  UI/UX <br />
+                  한성대학교 박수연 <br />
+                  성균관대학교 김지윤
+                </S.ModalContent>
+
+                <S.ModalContent>
+                  Front-End <br />
+                  동국대학교 이유진 <br />
+                  성균관대학교 김재영
+                </S.ModalContent>
+
+                <S.ModalContent>
+                  Back-End <br />
+                  동국대학교 차은호 <br />
+                  동국대학교 이상준
+                </S.ModalContent>
+              </S.ModalWrapper>
+            </S.ModalBackground>
+          </>
+        )}
       </S.AboutWrapper>
     </>
   );
