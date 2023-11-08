@@ -36,6 +36,11 @@ export const AboutContent = styled.div`
   margin-top: 46px;
 `;
 
+export const ClickMeImg = styled.img`
+  width: 209px;
+  margin-top: 60px;
+`;
+
 export const CandleWrapper = styled.div`
   position: fixed;
   bottom: 0;
