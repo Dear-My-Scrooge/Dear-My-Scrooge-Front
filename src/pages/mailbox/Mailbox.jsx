@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
 import PastBg from "../../assets/images/background/mailboxPast.png";
@@ -9,7 +10,11 @@ import WriteIcon from "../../assets/images/icon/write.png";
 import ShareIcon from "../../assets/images/icon/share.png";
 
 function Mailbox() {
-  const [time, setTime] = useState("과거");
+  const { state } = useLocation();
+  const data = state && state.data;
+
+  // const initialTime = location?.state?.time || "과거";
+  const [time, setTime] = useState(data);
 
   const getBackgroundColor = time => {
     if (time === "과거") return "#F0D890";
