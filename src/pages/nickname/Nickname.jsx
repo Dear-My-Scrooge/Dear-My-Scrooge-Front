@@ -4,13 +4,20 @@ import * as S from "./style";
 import Candle from "../../components/candle/Candle";
 
 function Nickname() {
-  let [inputCount, setInputCount] = useState(0);
+  const [nickname, setNickname] = useState("");
+  const [inputCount, setInputCount] = useState(0);
   const { state } = useLocation();
   const data = state && state.data;
-  console.log(data);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
+    setNickname(e.target.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    window.location.href = "/";
   };
 
   return (
@@ -18,17 +25,18 @@ function Nickname() {
       <S.NicknameWrapper>
         <S.NicknameTitle>수연's 스크루지</S.NicknameTitle>
         <S.NicknameWho>누구라고 전달해줄까요?</S.NicknameWho>
-        <S.NicknameInputWrapper>
-          <S.NicknameInput
-            type="text"
-            maxLength="10"
-            placeholder="닉네임을 입력해주세요"
-            onChange={onInputHandler}
-          />
-          <S.NicknameCnt>{inputCount} / 10</S.NicknameCnt>
-        </S.NicknameInputWrapper>
-        <S.SendButton>보내기</S.SendButton>
-
+        <S.NicknameForm onSubmit={handleSubmit}>
+          <S.NicknameInputWrapper>
+            <S.NicknameInput
+              type="text"
+              maxLength="10"
+              placeholder="닉네임을 입력해주세요"
+              onChange={onInputHandler}
+            />
+            <S.NicknameCnt>{inputCount} / 10</S.NicknameCnt>
+          </S.NicknameInputWrapper>
+          <S.SendButton type="submit">보내기</S.SendButton>
+        </S.NicknameForm>
         <S.CandleWrapper>
           <Candle />
         </S.CandleWrapper>
