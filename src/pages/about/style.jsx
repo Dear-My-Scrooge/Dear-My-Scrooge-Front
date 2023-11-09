@@ -65,7 +65,7 @@ export const ModalBackground = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(229, 229, 229, 0.4);
+  background: rgba(229, 229, 229, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@ export const ModalWrapper = styled.div`
   height: 379px;
   border-radius: 20px;
   background: #e5e5e5;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.25);
 `;
 
 export const ModalCloseButton = styled.img`

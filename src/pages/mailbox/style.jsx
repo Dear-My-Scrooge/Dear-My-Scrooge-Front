@@ -87,8 +87,21 @@ export const MailboxShareWrapper = styled.div`
   border-radius: 8px;
   background: #fff;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
 `;
 
 export const MailboxShareIcon = styled.img`
   width: 21px;
+`;
+
+export const MailboxShareAlert = styled.img`
+  position: fixed;
+  bottom: 80px;
+  margin-left: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 94px;
+  ${props => !props.visible && "opacity: 0;"}
+  transition: opacity 0.5s ease-in-out;
 `;
