@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import * as S from "./style";
 import FutureIcon from "../../assets/images/character/future.png";
 
 function Send(props) {
-  let [inputCount, setInputCount] = useState(0);
+  const [inputContent, setInputContent] = useState("");
+  const [inputCount, setInputCount] = useState(0);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
+    setInputContent(e.target.value);
   };
 
   return (
@@ -26,9 +29,12 @@ function Send(props) {
             placeholder="메시지를 입력해주세요"
             maxLength={100}
           />
-          <S.SendButtonWrapper>
-            <S.SendButton>보내기</S.SendButton>
-          </S.SendButtonWrapper>
+
+          <Link to="/nickname" state={{ data: inputContent }}>
+            <S.SendButtonWrapper>
+              <S.SendButton>보내기</S.SendButton>
+            </S.SendButtonWrapper>
+          </Link>
         </S.SendWrapper>
       </>
     </>

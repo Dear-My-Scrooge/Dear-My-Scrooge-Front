@@ -72,6 +72,13 @@ export const NicknameCnt = styled.div`
   line-height: normal;
 `;
 
+export const NicknameForm = styled.form`
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
 export const NicknameInputWrapper = styled.div`
   position: relative;
 `;

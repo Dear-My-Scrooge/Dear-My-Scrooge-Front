@@ -15,21 +15,21 @@ function Main() {
           <S.Title>수연's 스크루지</S.Title>
           <S.SubTitle>78번째 방문자에요 :)</S.SubTitle>
 
-          <Link to="/past">
+          <Link to="/mailbox" state={{ data: "past" }}>
             <S.Past>
               <S.PastImg src={PastIcon} alt="과거 캐릭터" />
               <S.PastText>Past</S.PastText>
             </S.Past>
           </Link>
 
-          <Link to="/present">
+          <Link to="/mailbox" state={{ data: "present" }}>
             <S.Present>
               <S.PresentText>Present</S.PresentText>
               <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
             </S.Present>
           </Link>
 
-          <Link to="/future">
+          <Link to="/mailbox" state={{ data: "future" }}>
             <S.Future>
               <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
               <S.FutureText>Future</S.FutureText>
@@ -37,7 +37,7 @@ function Main() {
           </Link>
 
           <Link to="/signup">
-            <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
+            <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
           </Link>
         </S.MainContent>
 
