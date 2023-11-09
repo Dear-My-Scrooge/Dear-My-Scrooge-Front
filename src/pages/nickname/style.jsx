@@ -37,7 +37,7 @@ export const NicknameInput = styled.input`
   border-radius: 16px;
   background: #e5e5e5;
   color: rgba(100, 100, 100, 0.9);
-  font-family: Nanum DaSiSiJagHae;
+  font-family: "Nanum_DaSiSiJagHae";
   font-size: 25px;
   font-weight: 400;
   line-height: normal;
@@ -50,11 +50,12 @@ export const SendButton = styled.button`
   align-items: center;
   width: 92px;
   height: 45px;
+  font-family: "Nanum_DaSiSiJagHae";
   border-radius: 16px;
   background: #fff;
   color: #000321;
   text-align: center;
-  font-family: "Nanum_DaSiSiJagHae";
+
   font-size: 25px;
   font-weight: 400;
   line-height: normal;
@@ -87,4 +88,11 @@ export const CandleWrapper = styled.div`
   position: fixed;
   bottom: 0;
   width: 72px;
+`;
+
+export const NicknameContentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
