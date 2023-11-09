@@ -17,7 +17,6 @@ export const AboutTitle = styled.div`
   margin-top: 130px;
   color: #fff;
   text-align: center;
-  font-family: Nanum DaSiSiJagHae;
   font-size: 45px;
   font-style: normal;
   font-weight: 400;
@@ -28,7 +27,6 @@ export const AboutTitle = styled.div`
 export const AboutContent = styled.div`
   color: #fff;
   text-align: center;
-  font-family: Nanum DaSiSiJagHae;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
