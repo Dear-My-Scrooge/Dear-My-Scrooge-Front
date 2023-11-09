@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const MailboxWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-image: url(${props => props.bgImg});
+  background-image: url(${props => props.bgimg});
   background-size: cover;
   background-position: center;
   display: flex;

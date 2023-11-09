@@ -15,8 +15,10 @@ export const AccordionQuestionWrapper = styled.div`
   padding: 20px;
   justify-content: space-between;
   gap: 10px;
-  border-radius: ${props =>
-    props.show ? "16px 16px 0px 0px" : "16px 16px 16px 16px"};
+  border-radius: 16px 16px 16px 16px;
+  &.show {
+    border-radius: 16px 16px 0px 0px;
+  }
 `;
 
 export const AccordionQuestion = styled.div`
@@ -30,8 +32,12 @@ export const AccordionMoreButton = styled.button``;
 
 export const AccordionMoreButtonImg = styled.img`
   width: 13.091px;
-  transform: ${props => (props.show ? "rotate(0deg)" : "rotate(180deg)")};
+  transform: rotate(180deg);
   transition: transform 0.3s;
+
+  &.show {
+    transform: rotate(0deg);
+  }
 `;
 
 export const AccordionAnswerWrapper = styled.div`

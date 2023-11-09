@@ -11,10 +11,6 @@ import ShareIcon from "../../assets/images/icon/share.png";
 function Mailbox() {
   const [time, setTime] = useState("과거");
 
-  const handleTimeClick = tab => {
-    setTime(tab);
-  };
-
   const getBackgroundColor = time => {
     if (time === "과거") return "#F0D890";
     else if (time === "현재") return "#810006";
@@ -34,7 +30,7 @@ function Mailbox() {
 
   return (
     <>
-      <S.MailboxWrapper bgImg={setBackgroundImg(time)}>
+      <S.MailboxWrapper bgimg={setBackgroundImg(time)}>
         <Head bgcolor={getBackgroundColor(time)} color={getColor(time)} />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab
