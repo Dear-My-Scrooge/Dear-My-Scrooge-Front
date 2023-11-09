@@ -29,3 +29,32 @@ export const TimeTab = styled.div`
   padding: 0px 18px 5px 18px;
   cursor: pointer;
 `;
+
+// 작성하기 버튼
+export const MailboxWriterWrapper = styled.div`
+  position: fixed;
+  bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 118px;
+  height: 49px;
+  border-radius: 25px;
+  background: #e5e5e5;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const MailboxWriterIcon = styled.img`
+  width: 20px;
+  margin-right: 8px;
+`;
+
+export const MailboxWriter = styled.div`
+  color: #000321;
+  text-align: center;
+  font-family: Nanum DaSiSiJagHae;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
