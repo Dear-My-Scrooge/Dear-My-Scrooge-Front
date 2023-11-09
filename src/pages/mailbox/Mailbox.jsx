@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
 import PastBg from "../../assets/images/background/mailboxPast.png";
@@ -13,24 +13,23 @@ function Mailbox() {
   const { state } = useLocation();
   const data = state && state.data;
 
-  // const initialTime = location?.state?.time || "과거";
   const [time, setTime] = useState(data);
 
   const getBackgroundColor = time => {
-    if (time === "과거") return "#F0D890";
-    else if (time === "현재") return "#810006";
-    else if (time === "미래") return "#083A00";
+    if (time === "past") return "#F0D890";
+    else if (time === "present") return "#810006";
+    else if (time === "future") return "#083A00";
   };
 
   const getColor = time => {
-    if (time === "과거") return "#000000";
+    if (time === "past") return "#000000";
     else return "#FFFFFF";
   };
 
   const setBackgroundImg = time => {
-    if (time === "과거") return PastBg;
-    else if (time === "현재") return PresentBg;
-    else if (time === "미래") return FutureBg;
+    if (time === "past") return PastBg;
+    else if (time === "present") return PresentBg;
+    else if (time === "future") return FutureBg;
   };
 
   return (
@@ -39,20 +38,20 @@ function Mailbox() {
         <Head bgcolor={getBackgroundColor(time)} color={getColor(time)} />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab
-            onClick={() => setTime("과거")}
-            borderbottom={time === "과거" ? "#000" : "none"}
+            onClick={() => setTime("past")}
+            borderbottom={time === "past" ? "#000" : "none"}
           >
             과거
           </S.TimeTab>
           <S.TimeTab
-            onClick={() => setTime("현재")}
-            borderbottom={time === "현재" ? "#fff" : "none"}
+            onClick={() => setTime("present")}
+            borderbottom={time === "present" ? "#fff" : "none"}
           >
             현재
           </S.TimeTab>
           <S.TimeTab
-            onClick={() => setTime("미래")}
-            borderbottom={time === "미래" ? "#fff" : "none"}
+            onClick={() => setTime("future")}
+            borderbottom={time === "future" ? "#fff" : "none"}
           >
             미래
           </S.TimeTab>
@@ -61,7 +60,10 @@ function Mailbox() {
         <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
         <S.MailboxWriterWrapper>
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
-          <S.MailboxWriter>작성하기</S.MailboxWriter>
+
+          <Link to={`/${time.toLowerCase()}`}>
+            <S.MailboxWriter>작성하기</S.MailboxWriter>
+          </Link>
         </S.MailboxWriterWrapper>
         <S.MailboxShareWrapper>
           <S.MailboxShareIcon src={ShareIcon} alt="공유 아이콘" />
