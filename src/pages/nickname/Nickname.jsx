@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../components/candle/Candle";
 
 function Nickname() {
   let [inputCount, setInputCount] = useState(0);
+  const { state } = useLocation();
+  const data = state && state.data;
+  console.log(data);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
