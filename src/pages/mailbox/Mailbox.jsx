@@ -6,6 +6,7 @@ import PresentBg from "../../assets/images/background/mailboxPresent.png";
 import FutureBg from "../../assets/images/background/mailboxFuture.png";
 import Accordion from "../../components/accordion/Accordion";
 import WriteIcon from "../../assets/images/icon/write.png";
+import ShareIcon from "../../assets/images/icon/share.png";
 
 function Mailbox() {
   const [time, setTime] = useState("과거");
@@ -55,13 +56,15 @@ function Mailbox() {
             미래
           </S.TimeTab>
         </S.TimeTabWrapper>
-
         <Accordion />
-
+        <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
         <S.MailboxWriterWrapper>
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
           <S.MailboxWriter>작성하기</S.MailboxWriter>
         </S.MailboxWriterWrapper>
+        <S.MailboxShareWrapper>
+          <S.MailboxShareIcon src={ShareIcon} alt="공유 아이콘" />
+        </S.MailboxShareWrapper>
       </S.MailboxWrapper>
     </>
   );

@@ -30,6 +30,14 @@ export const TimeTab = styled.div`
   cursor: pointer;
 `;
 
+// 고정 버튼
+export const FixedWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+`;
+
 // 작성하기 버튼
 export const MailboxWriterWrapper = styled.div`
   position: fixed;
@@ -57,4 +65,24 @@ export const MailboxWriter = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`;
+
+// 공유하기 버튼
+export const MailboxShareWrapper = styled.div`
+  position: fixed;
+  bottom: 30px;
+  margin-left: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+`;
+
+export const MailboxShareIcon = styled.img`
+  width: 21px;
 `;
