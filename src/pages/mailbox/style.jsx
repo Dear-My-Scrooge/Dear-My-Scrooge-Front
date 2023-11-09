@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-
+import { Link } from "react-router-dom";
 export const MailboxWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -39,7 +39,7 @@ export const FixedWrapper = styled.div`
 `;
 
 // 작성하기 버튼
-export const MailboxWriterWrapper = styled.div`
+export const MailboxWriterWrapper = styled(Link)`
   position: fixed;
   bottom: 80px;
   display: flex;
@@ -50,6 +50,11 @@ export const MailboxWriterWrapper = styled.div`
   border-radius: 25px;
   background: #e5e5e5;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    transform: scale(1.1); /* 크기를 1.1배로 확대 (원하는 크기로 조절 가능) */
+    transition: transform 0.2s;
+  }
 `;
 
 export const MailboxWriterIcon = styled.img`

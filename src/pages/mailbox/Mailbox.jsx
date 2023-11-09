@@ -57,13 +57,11 @@ function Mailbox() {
           </S.TimeTab>
         </S.TimeTabWrapper>
         <Accordion />
-        <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
-        <S.MailboxWriterWrapper>
+        <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />{" "}
+        <S.MailboxWriterWrapper to={`/${time.toLowerCase()}`}>
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
 
-          <Link to={`/${time.toLowerCase()}`}>
-            <S.MailboxWriter>작성하기</S.MailboxWriter>
-          </Link>
+          <S.MailboxWriter>작성하기</S.MailboxWriter>
         </S.MailboxWriterWrapper>
         <S.MailboxShareWrapper>
           <S.MailboxShareIcon src={ShareIcon} alt="공유 아이콘" />
