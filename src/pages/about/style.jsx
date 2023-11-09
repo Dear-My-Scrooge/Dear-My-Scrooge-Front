@@ -50,6 +50,13 @@ export const CandleWrapper = styled.div`
   width: 72px;
 `;
 
+export const AboutContentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 // 모달창
 
 export const ModalBackground = styled.div`

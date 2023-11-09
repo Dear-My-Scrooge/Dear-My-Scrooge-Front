@@ -89,3 +89,10 @@ export const CandleWrapper = styled.div`
   bottom: 0;
   width: 72px;
 `;
+
+export const NicknameContentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
