@@ -37,7 +37,7 @@ function Main() {
           </Link>
 
           <Link to="/signup">
-            <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
+            <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
           </Link>
         </S.MainContent>
 
