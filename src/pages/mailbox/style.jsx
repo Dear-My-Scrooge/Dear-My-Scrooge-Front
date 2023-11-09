@@ -66,7 +66,7 @@ export const MailboxWriterIcon = styled.img`
 export const MailboxWriter = styled.div`
   color: #000321;
   text-align: center;
-  font-family: Nanum DaSiSiJagHae;
+  font-family: "Nanum_DaSiSiJagHae";
   font-size: 25px;
   font-style: normal;
   font-weight: 400;

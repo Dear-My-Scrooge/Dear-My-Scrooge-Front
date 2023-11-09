@@ -39,9 +39,8 @@ function Nickname() {
             <S.SendButton type="submit">보내기</S.SendButton>
           </S.NicknameForm>
         </S.NicknameContentWrapper>
-        <S.CandleWrapper>
-          <Candle />
-        </S.CandleWrapper>
+
+        <Candle />
       </S.NicknameWrapper>
     </>
   );

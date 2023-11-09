@@ -57,6 +57,7 @@ export const SendButton = styled.button`
   background: #fff;
   color: #000321;
   text-align: center;
+  font-family: "Nanum_DaSiSiJagHae";
   font-size: 25px;
   font-weight: 400;
   line-height: normal;

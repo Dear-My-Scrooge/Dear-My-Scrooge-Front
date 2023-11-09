@@ -25,9 +25,8 @@ function About() {
             alt="클릭 아이콘"
           />
         </S.AboutContentWrapper>
-        <S.CandleWrapper>
-          <Candle />
-        </S.CandleWrapper>
+
+        <Candle />
 
         {isModalOpen && (
           <>
