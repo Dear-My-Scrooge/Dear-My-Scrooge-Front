@@ -5,6 +5,7 @@ import Candle from "../../../components/candle/Candle";
 import axios from "../../../api/axios";
 import { useRecoilState } from "recoil";
 import { userState } from "../../../context/authState";
+import Cookies from "js-cookie";
 
 function AuthLogin() {
   const navigate = useNavigate();
@@ -37,28 +38,36 @@ function AuthLogin() {
         password: pwd
       });
 
-      // const accessToken = response.data.token.access;
-      const refreshToken = response.data.token.refresh;
+      // console.log(response.data.token);
+      // // const accessToken = response.data.token.access;
+      // const refreshToken = response.data.token.refresh;
+
       const nickname = response.data.user.nickname;
+      const id = response.data.user.id;
+      // 토큰을 쿠키에 저장합니다.
+      Cookies.set("accessToken", response.data.accessToken, { expires: 7 });
+      // Cookies.set("refreshToken", refreshToken, { expires: 7 });
 
       setUserInfo({
         email: email,
-        nickname: nickname,
-        accessToken: accessToken,
-        refreshToken: refreshToken
+        nickname: nickname
+        // accessToken: accessToken,
+        //refreshToken: refreshToken
       });
 
       localStorage.setItem(
         "userInfo",
         JSON.stringify({
           email: email,
-          nickname: nickname,
-          accessToken: accessToken,
-          refreshToken: refreshToken
+          nickname: nickname
+          // accessToken: accessToken,
+          //refreshToken: refreshToken
         })
       );
 
-      navigate("/");
+      console.log(id);
+
+      navigate(`/${id}`);
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("비밀번호를 다시 입력해주세요!");

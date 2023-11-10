@@ -58,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "tree",
         element: <Tree />
+      },
+      {
+        path: ":user_id",
+        element: <Main />
       }
     ],
     errorElement: <NotFoundError />
