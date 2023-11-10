@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
 import Send from "../../components/send/Send";
@@ -7,6 +8,8 @@ import axios from "../../api/axios";
 import FutureIcon from "../../assets/images/character/future.png";
 
 function Future() {
+  const { state } = useLocation();
+  const nickname = state && state.nickname;
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +29,7 @@ function Future() {
   return (
     <>
       <S.FutureWrapper>
-        <Head bgcolor={"#083A00"} color={"#fff"} />
+        <Head bgcolor={"#083A00"} color={"#fff"} nickname={nickname} />
         {data.length > 0 ? (
           <S.FutureQuestion>Q. {data[0].content}</S.FutureQuestion>
         ) : (

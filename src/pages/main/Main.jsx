@@ -44,14 +44,20 @@ function Main() {
             </S.Past>
           </Link>
 
-          <Link to="/mailbox" state={{ data: "present" }}>
+          <Link
+            to="/mailbox"
+            state={{ data: "present", nickname: data.nickname }}
+          >
             <S.Present>
               <S.PresentText>Present</S.PresentText>
               <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
             </S.Present>
           </Link>
 
-          <Link to="/mailbox" state={{ data: "future" }}>
+          <Link
+            to="/mailbox"
+            state={{ data: "future", nickname: data.nickname }}
+          >
             <S.Future>
               <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
               <S.FutureText>Future</S.FutureText>
