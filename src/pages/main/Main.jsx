@@ -50,7 +50,11 @@ function Main() {
 
           <Link
             to="/mailbox"
-            state={{ data: "present", nickname: data.nickname }}
+            state={{
+              data: "present",
+              nickname: data.nickname,
+              user_id: user_id
+            }}
           >
             <S.Present>
               <S.PresentText>Present</S.PresentText>
@@ -60,7 +64,11 @@ function Main() {
 
           <Link
             to="/mailbox"
-            state={{ data: "future", nickname: data.nickname }}
+            state={{
+              data: "future",
+              nickname: data.nickname,
+              user_id: user_id
+            }}
           >
             <S.Future>
               <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />

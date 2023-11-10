@@ -13,6 +13,7 @@ function Present() {
   const [data, setData] = useState([]);
   const { state } = useLocation();
   const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   useEffect(() => {
     fetchData();
@@ -47,6 +48,7 @@ function Present() {
           top={"-40px"}
           right={"30px"}
           nickname={nickname}
+          user_id={user_id}
         />
         <S.SnowmanIcon src={SnowmanIcon} alt="눈사람 아이콘" />
       </S.PresentWrapper>

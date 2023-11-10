@@ -11,6 +11,7 @@ function Future() {
   const { state } = useLocation();
   const nickname = state && state.nickname;
   const [data, setData] = useState([]);
+  const user_id = state && state.user_id;
 
   useEffect(() => {
     fetchData();
@@ -42,6 +43,7 @@ function Future() {
           top={"-25px"}
           right={"30px"}
           nickname={nickname}
+          user_id={user_id}
         />
       </S.FutureWrapper>
     </>
