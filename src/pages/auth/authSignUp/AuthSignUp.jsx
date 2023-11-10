@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import * as S from "./style";
+import { useNavigate } from "react-router-dom";
 import Candle from "../../../components/candle/Candle";
+import axios from "../../../api/axios";
 
 function AuthSignUp() {
   const [user, setUser] = useState({
     email: "",
-    password: "",
     nickname: "",
-    introduce: ""
+    password: "",
+    password1: ""
   });
 
   const [pwd, setPwd] = useState("");
   const [confirmPwd, setConfirmPwd] = useState("");
   const [passwordIsVaild, setpasswordIsVaild] = useState(false);
   const [pwdMatchMessage, setPwdMatchMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -23,7 +27,8 @@ function AuthSignUp() {
         const response = await axios.post("auth/signup", {
           nickname: user.nickname,
           email: user.email,
-          password: user.password
+          password: user.password,
+          password1: user.password1
         });
         if (response.status === 200) {
           alert("회원가입이 완료되었습니다.");
