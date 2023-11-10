@@ -10,7 +10,7 @@ import Candle from "../../components/candle/Candle";
 
 function Main() {
   // 데이터
-  const [data, setData] = useState({ nickname: "" });
+  const [data, setData] = useState({ nickname: "", view_cnt: 0 });
 
   const url = window.location.pathname;
   const parts = url.split("/");
@@ -35,7 +35,7 @@ function Main() {
       <S.MainWrapper>
         <S.MainContent>
           <S.Title>{data.nickname}'s 스크루지</S.Title>
-          <S.SubTitle>78번째 방문자에요 :)</S.SubTitle>
+          <S.SubTitle>{data.view_cnt}번째 방문자에요 :)</S.SubTitle>
 
           <Link to="/mailbox" state={{ data: "past", nickname: data.nickname }}>
             <S.Past>
