@@ -79,12 +79,12 @@ export const AuthSignUpButton = styled.button`
   background: #fff;
   color: #000321;
   text-align: center;
-  font-family: Nanum DaSiSiJagHae;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 37px;
+  font-family: "Nanum_DaSiSiJagHae";
 `;
 
 export const MessageText = styled.span`

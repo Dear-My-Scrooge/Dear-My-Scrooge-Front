@@ -10,7 +10,7 @@ import Candle from "../../components/candle/Candle";
 
 function Main() {
   // 데이터
-  const [data, setData] = useState({ nickname: "" });
+  const [data, setData] = useState({ nickname: "", view_cnt: 0 });
 
   const url = window.location.pathname;
   const parts = url.split("/");
@@ -24,6 +24,7 @@ function Main() {
   const fetchData = async () => {
     try {
       const response = await axios.get(`auth/username/${user_id}`);
+
       setData(response.data);
     } catch (e) {
       console.log(e);
@@ -35,23 +36,40 @@ function Main() {
       <S.MainWrapper>
         <S.MainContent>
           <S.Title>{data.nickname}'s 스크루지</S.Title>
-          <S.SubTitle>78번째 방문자에요 :)</S.SubTitle>
+          <S.SubTitle>{data.view_cnt}번째 방문자에요 :)</S.SubTitle>
 
-          <Link to="/mailbox" state={{ data: "past" }}>
+          <Link
+            to="/mailbox"
+            state={{ data: "past", nickname: data.nickname, user_id: user_id }}
+          >
             <S.Past>
               <S.PastImg src={PastIcon} alt="과거 캐릭터" />
               <S.PastText>Past</S.PastText>
             </S.Past>
           </Link>
 
-          <Link to="/mailbox" state={{ data: "present" }}>
+          <Link
+            to="/mailbox"
+            state={{
+              data: "present",
+              nickname: data.nickname,
+              user_id: user_id
+            }}
+          >
             <S.Present>
               <S.PresentText>Present</S.PresentText>
               <S.PresentImg src={PresentIcon} alt="현재 캐릭터" />
             </S.Present>
           </Link>
 
-          <Link to="/mailbox" state={{ data: "future" }}>
+          <Link
+            to="/mailbox"
+            state={{
+              data: "future",
+              nickname: data.nickname,
+              user_id: user_id
+            }}
+          >
             <S.Future>
               <S.FutureImg src={FutureIcon} alt="미래 캐릭터" />
               <S.FutureText>Future</S.FutureText>

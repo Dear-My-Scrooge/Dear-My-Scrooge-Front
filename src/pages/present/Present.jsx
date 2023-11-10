@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
 import Send from "../../components/send/Send";
@@ -10,6 +11,9 @@ import DuckIcon from "../../assets/images/icon/duck.png";
 
 function Present() {
   const [data, setData] = useState([]);
+  const { state } = useLocation();
+  const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   useEffect(() => {
     fetchData();
@@ -28,7 +32,7 @@ function Present() {
   return (
     <>
       <S.PresentWrapper>
-        <Head bgcolor={"#810006"} color={"#fff"} />
+        <Head bgcolor={"#810006"} color={"#fff"} nickname={nickname} />
         <S.PresentQuestionWrapper>
           {data.length > 0 ? (
             <S.PresentQuestion>Q. {data[0].content}</S.PresentQuestion>
@@ -43,7 +47,8 @@ function Present() {
           iconsize={"108px"}
           top={"-40px"}
           right={"30px"}
-          data={data}
+          nickname={nickname}
+          user_id={user_id}
         />
         <S.SnowmanIcon src={SnowmanIcon} alt="눈사람 아이콘" />
       </S.PresentWrapper>

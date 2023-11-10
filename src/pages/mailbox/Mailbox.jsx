@@ -13,6 +13,8 @@ import AlertIcon from "../../assets/images/icon/alert.png";
 function Mailbox() {
   const { state } = useLocation();
   const data = state && state.data;
+  const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   const [time, setTime] = useState(data);
   const [showShareAlert, setShowShareAlert] = useState(false);
@@ -57,7 +59,11 @@ function Mailbox() {
   return (
     <>
       <S.MailboxWrapper bgimg={setBackgroundImg(time)}>
-        <Head bgcolor={getBackgroundColor(time)} color={getColor(time)} />
+        <Head
+          bgcolor={getBackgroundColor(time)}
+          color={getColor(time)}
+          nickname={nickname}
+        />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab
             onClick={() => setTime("past")}
@@ -80,7 +86,10 @@ function Mailbox() {
         </S.TimeTabWrapper>
         <Accordion />
         <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
-        <S.MailboxWriterWrapper to={`/${time.toLowerCase()}`}>
+        <S.MailboxWriterWrapper
+          to={`/${time.toLowerCase()}`}
+          state={{ nickname: nickname, user_id: user_id }}
+        >
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
 
           <S.MailboxWriter>작성하기</S.MailboxWriter>

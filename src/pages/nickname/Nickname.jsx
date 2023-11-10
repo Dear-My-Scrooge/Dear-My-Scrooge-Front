@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../components/candle/Candle";
 
 function Nickname() {
+  const navigate = useNavigate();
   const [nickname, setNickname] = useState("");
   const [inputCount, setInputCount] = useState(0);
   const { state } = useLocation();
   const data = state && state.data;
+  const myNickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
@@ -17,14 +20,14 @@ function Nickname() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    window.location.href = "/";
+    navigate(`/${user_id}`);
   };
 
   return (
     <>
       <S.NicknameWrapper>
         <S.NicknameContentWrapper>
-          <S.NicknameTitle>수연's 스크루지</S.NicknameTitle>
+          <S.NicknameTitle>{myNickname}'s 스크루지</S.NicknameTitle>
           <S.NicknameWho>누구라고 전달해줄까요?</S.NicknameWho>
           <S.NicknameForm onSubmit={handleSubmit}>
             <S.NicknameInputWrapper>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
 import Send from "../../components/send/Send";
@@ -9,6 +10,9 @@ import SocksIcon from "../../assets/images/icon/socks.png";
 
 function Past() {
   const [data, setData] = useState([]);
+  const { state } = useLocation();
+  const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   useEffect(() => {
     fetchData();
@@ -27,7 +31,7 @@ function Past() {
   return (
     <>
       <S.PastWrapper>
-        <Head bgcolor={"#F0D890"} color={"#000"} />
+        <Head bgcolor={"#F0D890"} color={"#000"} nickname={nickname} />
         <S.PastQuestionWrapper>
           {data.length > 0 ? (
             <S.PastQuestion>Q. {data[0].content}</S.PastQuestion>
@@ -40,7 +44,8 @@ function Past() {
           iconsize={"132px"}
           top={"-50px"}
           right={"5px"}
-          data={data}
+          nickname={nickname}
+          user_id={user_id}
         />
         <S.SocksIcon src={SocksIcon} alt="양말 아이콘" />
       </S.PastWrapper>
