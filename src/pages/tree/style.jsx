@@ -24,10 +24,10 @@ export const CreatePage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 204px;
-  height: 38px;
+  width: 257px;
+  height: 45px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.65);
+  background: #E5E5E5;
   color: #010422;
   text-align: center;
   font-size: 20px;
@@ -39,17 +39,17 @@ export const CreatePage = styled.div`
 
 
 export const GhostIcon = styled.img`
-margin-left: 300px;
+margin-left: 250px;
   display: flex;
-  width: 72px;
-  height: 99px;
-  margin-top: 6px;
+  width: 148.75px;
+  height: 148.75px;
+  margin-top: 70px;
 `;
 
 export const TreeIcon = styled.img`
   display: flex;
-  width: 210px;
-  height: 299px;
+  width: 332px;
+  height: 387.67px;
   margin-top: 6px;
 `;
 
@@ -57,7 +57,6 @@ export const TreeIcon = styled.img`
 export const Title = styled.div`
   display: flex;
   color: #fff;
-  margin-top: 97px;
   font-size: 45px;
   font-weight: 400;
   line-height: normal;

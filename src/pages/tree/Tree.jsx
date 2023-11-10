@@ -20,11 +20,11 @@ function Tree() {
 
             <S.TreeIcon src={TreeIcon} alt="트리 아이콘" />
   
-            <Link to="/authLogin">
+            <Link to="/login">
               <S.CreatePage>로그인</S.CreatePage>
             </Link>
 
-            <Link to="/authSignUp">
+            <Link to="/signUp">
               <S.CreatePage>내 스크루지 페이지 만들기</S.CreatePage>
             </Link>
   
