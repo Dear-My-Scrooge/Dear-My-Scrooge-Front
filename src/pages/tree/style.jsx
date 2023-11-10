@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import MainBackGroundImg from "../../assets/images/background/main.png";
+import MainBackGroundImg from "../../assets/images/background/main2.png";
 
 export const MainWrapper = styled.div`
   width: 100%;
