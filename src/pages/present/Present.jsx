@@ -24,6 +24,7 @@ function Present() {
       console.log(e);
     }
   };
+
   return (
     <>
       <S.PresentWrapper>
