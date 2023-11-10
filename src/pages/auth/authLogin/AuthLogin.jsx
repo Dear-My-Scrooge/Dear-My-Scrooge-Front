@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../../components/candle/Candle";
+import axios from "../../../api/axios";
+import { useRecoilState } from "recoil";
+import { userState } from "../../../context/authState";
 
 function AuthLogin() {
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useRecoilState(userState);
   const [loginData, setLoginData] = useState({
     email: "",
     pwd: ""
@@ -27,12 +32,12 @@ function AuthLogin() {
     }
 
     try {
-      const response = await axios.post("auth/login", {
+      const response = await axios.post("auth/", {
         email: email,
         password: pwd
       });
 
-      const accessToken = response.data.token.access;
+      // const accessToken = response.data.token.access;
       const refreshToken = response.data.token.refresh;
       const nickname = response.data.user.nickname;
 
