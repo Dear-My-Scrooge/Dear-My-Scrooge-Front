@@ -25,8 +25,8 @@ function AuthSignUp() {
     if (user.email && user.password && confirmPwd && user.nickname) {
       try {
         const response = await axios.post("auth/signup", {
-          nickname: user.nickname,
           email: user.email,
+          nickname: user.nickname,
           password: user.password,
           password1: user.password1
         });
@@ -66,6 +66,7 @@ function AuthSignUp() {
     e.preventDefault();
     const confirmedPassword = e.target.value;
     setConfirmPwd(confirmedPassword);
+    setUser({ ...user, password1: confirmedPassword });
 
     // Password confirmation validation
     if (confirmedPassword !== pwd) {
