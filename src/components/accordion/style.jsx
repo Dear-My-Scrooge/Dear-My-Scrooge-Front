@@ -19,6 +19,7 @@ export const AccordionQuestionWrapper = styled.div`
   &.show {
     border-radius: 16px 16px 0px 0px;
   }
+  cursor: pointer;
 `;
 
 export const AccordionQuestion = styled.div`
@@ -61,6 +62,20 @@ export const AccordionAnswer = styled.div`
   font-weight: 400;
   line-height: 26.3px;
   padding: 10px 20px;
+`;
+
+export const AccordionAnswerContent = styled.div`
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26.3px;
+`;
+
+export const AccordionAnswerWriter = styled.div`
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26.3px;
 `;
 
 export const AccordionLastAnswer = styled.div`
