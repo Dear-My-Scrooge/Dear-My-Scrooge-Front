@@ -12,6 +12,7 @@ function Past() {
   const [data, setData] = useState([]);
   const { state } = useLocation();
   const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   useEffect(() => {
     fetchData();
@@ -44,6 +45,7 @@ function Past() {
           top={"-50px"}
           right={"5px"}
           nickname={nickname}
+          user_id={user_id}
         />
         <S.SocksIcon src={SocksIcon} alt="양말 아이콘" />
       </S.PastWrapper>

@@ -14,6 +14,7 @@ function Mailbox() {
   const { state } = useLocation();
   const data = state && state.data;
   const nickname = state && state.nickname;
+  const user_id = state && state.user_id;
 
   const [time, setTime] = useState(data);
   const [showShareAlert, setShowShareAlert] = useState(false);
@@ -87,7 +88,7 @@ function Mailbox() {
         <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
         <S.MailboxWriterWrapper
           to={`/${time.toLowerCase()}`}
-          state={{ nickname: nickname }}
+          state={{ nickname: nickname, user_id: user_id }}
         >
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
 

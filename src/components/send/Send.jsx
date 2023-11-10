@@ -32,7 +32,11 @@ function Send(props) {
 
           <Link
             to="/nickname"
-            state={{ data: inputContent, nickname: props.nickname }}
+            state={{
+              data: inputContent,
+              nickname: props.nickname,
+              user_id: props.user_id
+            }}
           >
             <S.SendButtonWrapper>
               <S.SendButton>보내기</S.SendButton>

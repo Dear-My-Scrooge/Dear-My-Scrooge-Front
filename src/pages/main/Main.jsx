@@ -38,7 +38,10 @@ function Main() {
           <S.Title>{data.nickname}'s 스크루지</S.Title>
           <S.SubTitle>{data.view_cnt}번째 방문자에요 :)</S.SubTitle>
 
-          <Link to="/mailbox" state={{ data: "past", nickname: data.nickname }}>
+          <Link
+            to="/mailbox"
+            state={{ data: "past", nickname: data.nickname, user_id: user_id }}
+          >
             <S.Past>
               <S.PastImg src={PastIcon} alt="과거 캐릭터" />
               <S.PastText>Past</S.PastText>
