@@ -8,6 +8,7 @@ function Nickname() {
   const [inputCount, setInputCount] = useState(0);
   const { state } = useLocation();
   const data = state && state.data;
+  const myNickname = state && state.nickname;
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
@@ -24,7 +25,7 @@ function Nickname() {
     <>
       <S.NicknameWrapper>
         <S.NicknameContentWrapper>
-          <S.NicknameTitle>수연's 스크루지</S.NicknameTitle>
+          <S.NicknameTitle>{myNickname}'s 스크루지</S.NicknameTitle>
           <S.NicknameWho>누구라고 전달해줄까요?</S.NicknameWho>
           <S.NicknameForm onSubmit={handleSubmit}>
             <S.NicknameInputWrapper>

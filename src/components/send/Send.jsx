@@ -30,7 +30,10 @@ function Send(props) {
             maxLength={100}
           />
 
-          <Link to="/nickname" state={{ data: inputContent }}>
+          <Link
+            to="/nickname"
+            state={{ data: inputContent, nickname: props.nickname }}
+          >
             <S.SendButtonWrapper>
               <S.SendButton>보내기</S.SendButton>
             </S.SendButtonWrapper>

@@ -24,6 +24,7 @@ function Main() {
   const fetchData = async () => {
     try {
       const response = await axios.get(`auth/username/${user_id}`);
+
       setData(response.data);
     } catch (e) {
       console.log(e);

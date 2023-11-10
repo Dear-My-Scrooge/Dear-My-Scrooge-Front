@@ -43,7 +43,7 @@ function Past() {
           iconsize={"132px"}
           top={"-50px"}
           right={"5px"}
-          data={data}
+          nickname={nickname}
         />
         <S.SocksIcon src={SocksIcon} alt="양말 아이콘" />
       </S.PastWrapper>
