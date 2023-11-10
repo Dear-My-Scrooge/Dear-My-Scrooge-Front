@@ -1,7 +1,16 @@
 import React from "react";
+import * as S from "./style";
+import Candle from "../../../components/candle/Candle";
 
-function AuthSignup() {
-  return <>AuthSignup</>;
+function AuthSignUp() {
+  return (
+    <>
+      <S.AuthSignUpWrapper>
+        <S.AuthSignUpContentWrapper></S.AuthSignUpContentWrapper>
+        <Candle />
+      </S.AuthSignUpWrapper>
+    </>
+  );
 }
 
-export default AuthSignup;
+export default AuthSignUp;

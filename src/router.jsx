@@ -4,7 +4,7 @@ import App from "./App";
 
 import Main from "./pages/main/Main";
 import AuthLogin from "./pages/auth/authLogin/AuthLogin";
-import SignUp from "./pages/auth/authSignUp/AuthSignUp";
+import AuthSignUp from "./pages/auth/authSignUp/AuthSignUp";
 import About from "./pages/about/About";
 import Past from "./pages/past/Past";
 import Present from "./pages/present/Present";
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "signup",
-        element: <SignUp />
+        element: <AuthSignUp />
       },
       {
         path: "about",
