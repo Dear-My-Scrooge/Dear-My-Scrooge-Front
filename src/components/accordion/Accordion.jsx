@@ -24,7 +24,7 @@ function Accordion({ data }) {
               onClick={() => handleShowMore(index)}
               className={show[index] ? "show" : "hide"}
             >
-              <S.AccordionQuestion>{question.content}</S.AccordionQuestion>
+              <S.AccordionQuestion>Q. {question.content}</S.AccordionQuestion>
               <S.AccordionMoreButton>
                 <S.AccordionMoreButtonImg
                   src={MoreIcon}

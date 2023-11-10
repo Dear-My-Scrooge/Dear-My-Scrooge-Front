@@ -61,14 +61,26 @@ function Mailbox() {
 
   useEffect(() => {
     fetchAnswerData();
-  }, []);
+  }, [time]);
 
   const fetchAnswerData = async () => {
     try {
-      const response = await axios.get(`main/username/${user_id}/answer/past`);
-
-      setAnswerData(response.data);
-      console.log(response.data);
+      if (time === "past") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/past`
+        );
+        setAnswerData(response.data);
+      } else if (time === "present") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/present`
+        );
+        setAnswerData(response.data);
+      } else if (time === "future") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/future`
+        );
+        setAnswerData(response.data);
+      }
     } catch (e) {
       console.log(e);
     }
