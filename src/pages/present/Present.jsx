@@ -46,7 +46,7 @@ function Present() {
           iconsize={"108px"}
           top={"-40px"}
           right={"30px"}
-          data={data}
+          nickname={nickname}
         />
         <S.SnowmanIcon src={SnowmanIcon} alt="눈사람 아이콘" />
       </S.PresentWrapper>

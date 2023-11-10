@@ -41,7 +41,7 @@ function Future() {
           iconsize={"108px"}
           top={"-25px"}
           right={"30px"}
-          data={data}
+          nickname={nickname}
         />
       </S.FutureWrapper>
     </>
