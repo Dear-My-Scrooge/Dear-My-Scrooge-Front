@@ -12,11 +12,14 @@ function Accordion() {
   return (
     <>
       <S.AccordionWrapper>
-        <S.AccordionQuestionWrapper className={show ? "show" : "hide"}>
+        <S.AccordionQuestionWrapper
+          onClick={handleShowMore}
+          className={show ? "show" : "hide"}
+        >
           <S.AccordionQuestion>
             Q. 과거 수연의 첫 수연의 첫 인상은?
           </S.AccordionQuestion>
-          <S.AccordionMoreButton onClick={handleShowMore}>
+          <S.AccordionMoreButton>
             <S.AccordionMoreButtonImg
               src={MoreIcon}
               className={show ? "show" : "hide"}

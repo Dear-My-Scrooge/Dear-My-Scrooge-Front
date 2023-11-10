@@ -19,6 +19,7 @@ export const AccordionQuestionWrapper = styled.div`
   &.show {
     border-radius: 16px 16px 0px 0px;
   }
+  cursor: pointer;
 `;
 
 export const AccordionQuestion = styled.div`
