@@ -29,8 +29,11 @@ function Accordion() {
 
         <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
           <S.AccordionAnswer>
-            발랄했다.
-            <br /> s - 작심이 -
+            <S.AccordionAnswerContent>
+              발랄했다! 지금도 역시 그렇다.지금도 역시 그렇다.지금도 역시
+              그렇다.지금도 역시 그렇다.지금도 역시 그렇다.
+            </S.AccordionAnswerContent>
+            <S.AccordionAnswerWriter>- 작심이 -</S.AccordionAnswerWriter>
           </S.AccordionAnswer>
         </S.AccordionAnswerWrapper>
 
