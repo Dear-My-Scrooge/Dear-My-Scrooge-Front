@@ -43,7 +43,7 @@ function AuthLogin() {
       // const refreshToken = response.data.token.refresh;
 
       const nickname = response.data.user.nickname;
-
+      const id = response.data.user.id;
       // 토큰을 쿠키에 저장합니다.
       Cookies.set("accessToken", response.data.accessToken, { expires: 7 });
       // Cookies.set("refreshToken", refreshToken, { expires: 7 });
@@ -65,7 +65,9 @@ function AuthLogin() {
         })
       );
 
-      navigate("/${user_id}");
+      console.log(id);
+
+      navigate(`/${id}`);
     } catch (error) {
       console.error("Login failed:", error.message);
       alert("비밀번호를 다시 입력해주세요!");
