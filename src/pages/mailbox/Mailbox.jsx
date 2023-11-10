@@ -13,7 +13,7 @@ import AlertIcon from "../../assets/images/icon/alert.png";
 function Mailbox() {
   const { state } = useLocation();
   const data = state && state.data;
-  const nickname = state.nickname;
+  const nickname = state && state.nickname;
 
   const [time, setTime] = useState(data);
   const [showShareAlert, setShowShareAlert] = useState(false);
@@ -85,7 +85,10 @@ function Mailbox() {
         </S.TimeTabWrapper>
         <Accordion />
         <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
-        <S.MailboxWriterWrapper to={`/${time.toLowerCase()}`}>
+        <S.MailboxWriterWrapper
+          to={`/${time.toLowerCase()}`}
+          state={{ nickname: nickname }}
+        >
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
 
           <S.MailboxWriter>작성하기</S.MailboxWriter>
