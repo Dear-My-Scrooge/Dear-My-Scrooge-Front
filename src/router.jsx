@@ -62,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: ":user_id",
         element: <Main />
+      },
+      {
+        path: "mailbox/:user_id",
+        element: <Mailbox />
       }
     ],
     errorElement: <NotFoundError />

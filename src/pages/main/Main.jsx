@@ -10,6 +10,7 @@ import Candle from "../../components/candle/Candle";
 
 function Main() {
   // 데이터
+  const navigate = useNavigate();
   const [data, setData] = useState({ nickname: "", view_cnt: 0 });
 
   const url = window.location.pathname;
@@ -26,6 +27,7 @@ function Main() {
       const response = await axios.get(`auth/username/${user_id}`);
 
       setData(response.data);
+      console.log(response.data);
     } catch (e) {
       console.log(e);
     }
@@ -39,7 +41,7 @@ function Main() {
           <S.SubTitle>{data.view_cnt}번째 방문자에요 :)</S.SubTitle>
 
           <Link
-            to="/mailbox"
+            to={`/mailbox/${user_id}`}
             state={{ data: "past", nickname: data.nickname, user_id: user_id }}
           >
             <S.Past>
