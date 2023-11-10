@@ -13,6 +13,7 @@ import AlertIcon from "../../assets/images/icon/alert.png";
 function Mailbox() {
   const { state } = useLocation();
   const data = state && state.data;
+  const nickname = state.nickname;
 
   const [time, setTime] = useState(data);
   const [showShareAlert, setShowShareAlert] = useState(false);
@@ -57,7 +58,11 @@ function Mailbox() {
   return (
     <>
       <S.MailboxWrapper bgimg={setBackgroundImg(time)}>
-        <Head bgcolor={getBackgroundColor(time)} color={getColor(time)} />
+        <Head
+          bgcolor={getBackgroundColor(time)}
+          color={getColor(time)}
+          nickname={nickname}
+        />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab
             onClick={() => setTime("past")}

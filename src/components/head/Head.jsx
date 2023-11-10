@@ -6,7 +6,9 @@ function Head(props) {
     <>
       <>
         <S.HeadWrapper bgcolor={props.bgcolor}>
-          <S.HeadTitle color={props.color}>수연's 스크루지</S.HeadTitle>
+          <S.HeadTitle color={props.color}>
+            {props.nickname}'s 스크루지
+          </S.HeadTitle>
         </S.HeadWrapper>
       </>
     </>
