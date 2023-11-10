@@ -36,7 +36,7 @@ function Main() {
             </S.Future>
           </Link>
 
-          <Link to="/login">
+          <Link to="/tree">
             <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
           </Link>
         </S.MainContent>
