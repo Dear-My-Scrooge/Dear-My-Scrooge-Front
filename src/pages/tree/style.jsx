@@ -1,6 +1,17 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 
 import MainBackGroundImg from "../../assets/images/background/main2.png";
+
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const MainWrapper = styled.div`
   width: 100%;
@@ -14,6 +25,7 @@ export const MainWrapper = styled.div`
 `;
 
 export const MainContent = styled.div`
+  animation: ${fadeInAnimation} 1s ease-in-out;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -44,6 +56,7 @@ export const GhostIcon = styled.img`
   width: 148.75px;
   height: 148.75px;
   margin-top: 70px;
+  animation: ${fadeInAnimation} 1s ease-in-out;
 `;
 
 export const TreeIcon = styled.img`

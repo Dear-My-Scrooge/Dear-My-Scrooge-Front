@@ -1,6 +1,15 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import MainBackGroundImg from "../../assets/images/background/main.png";
-
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 export const AboutWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -55,6 +64,7 @@ export const AboutContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: ${fadeInAnimation} 1s ease-in-out;
 `;
 
 // 모달창
@@ -82,6 +92,7 @@ export const ModalWrapper = styled.div`
   border-radius: 20px;
   background: #e5e5e5;
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.25);
+  animation: ${fadeInAnimation} 1s ease-in-out;
 `;
 
 export const ModalCloseButton = styled.img`
