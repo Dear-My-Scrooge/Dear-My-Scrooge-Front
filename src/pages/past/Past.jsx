@@ -23,6 +23,7 @@ function Past() {
     try {
       const response = await axios.get(`main/question/past`);
       setData(response.data);
+
       setQuestionId(response.data[0].id);
     } catch (e) {
       console.log(e);
@@ -32,7 +33,12 @@ function Past() {
   return (
     <>
       <S.PastWrapper>
-        <Head bgcolor={"#F0D890"} color={"#000"} nickname={nickname} />
+        <Head
+          bgcolor={"#F0D890"}
+          color={"#000"}
+          nickname={nickname}
+          user_id={user_id}
+        />
         <S.PastQuestionWrapper>
           {data.length > 0 ? (
             <S.PastQuestion>Q. {data[0].content}</S.PastQuestion>

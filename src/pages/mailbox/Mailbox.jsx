@@ -93,6 +93,7 @@ function Mailbox() {
           bgcolor={getBackgroundColor(time)}
           color={getColor(time)}
           nickname={nickname}
+          user_id={user_id}
         />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab

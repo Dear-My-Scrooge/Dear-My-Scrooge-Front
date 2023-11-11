@@ -34,7 +34,12 @@ function Present() {
   return (
     <>
       <S.PresentWrapper>
-        <Head bgcolor={"#810006"} color={"#fff"} nickname={nickname} />
+        <Head
+          bgcolor={"#810006"}
+          color={"#fff"}
+          nickname={nickname}
+          user_id={user_id}
+        />
         <S.PresentQuestionWrapper>
           {data.length > 0 ? (
             <S.PresentQuestion>Q. {data[0].content}</S.PresentQuestion>

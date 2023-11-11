@@ -32,7 +32,12 @@ function Future() {
   return (
     <>
       <S.FutureWrapper>
-        <Head bgcolor={"#083A00"} color={"#fff"} nickname={nickname} />
+        <Head
+          bgcolor={"#083A00"}
+          color={"#fff"}
+          nickname={nickname}
+          user_id={user_id}
+        />
         {data.length > 0 ? (
           <S.FutureQuestion>Q. {data[0].content}</S.FutureQuestion>
         ) : (
