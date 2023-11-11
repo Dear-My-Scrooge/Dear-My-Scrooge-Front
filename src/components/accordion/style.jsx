@@ -33,11 +33,11 @@ export const AccordionMoreButton = styled.button``;
 
 export const AccordionMoreButtonImg = styled.img`
   width: 13.091px;
-  transform: rotate(180deg);
+  transform: rotate(0deg);
   transition: transform 0.3s;
 
   &.show {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
 `;
 
