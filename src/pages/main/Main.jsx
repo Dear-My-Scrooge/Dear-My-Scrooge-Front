@@ -82,7 +82,7 @@ function Main() {
             </S.Future>
           </Link>
 
-          {cookie && (
+          {!cookie && (
             <Link
               to="/tree"
               state={{
