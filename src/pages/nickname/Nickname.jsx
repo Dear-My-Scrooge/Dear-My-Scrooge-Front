@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../components/candle/Candle";
+import axios from "../../api/axios";
 
 function Nickname() {
   const navigate = useNavigate();
@@ -11,14 +12,38 @@ function Nickname() {
   const data = state && state.data;
   const myNickname = state && state.nickname;
   const user_id = state && state.user_id;
+  const question_id = state && state.question_id;
+  console.log("question_id" + question_id);
+  console.log("data" + data);
+  console.log("nickname" + nickname);
+  console.log("user_id" + user_id);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
     setNickname(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
+
+    if (nickname && data) {
+      try {
+        const response = await axios.post(`main/username/${user_id}/answer`, {
+          writer: nickname,
+          content: data,
+          to_user: user_id,
+          question: question_id
+        });
+        if (response.status === 201) {
+          alert("작성 성공 :)");
+        }
+      } catch (error) {
+        alert("작성 실패 :(");
+        console.log(error);
+      }
+    } else {
+      alert("모든 필수 정보를 입력해주세요.");
+    }
 
     navigate(`/${user_id}`);
   };
