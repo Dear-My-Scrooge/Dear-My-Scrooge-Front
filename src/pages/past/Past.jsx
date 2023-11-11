@@ -23,7 +23,6 @@ function Past() {
     try {
       const response = await axios.get(`main/question/past`);
       setData(response.data);
-      console.log(response.data);
       setQuestionId(response.data[0].id);
     } catch (e) {
       console.log(e);
