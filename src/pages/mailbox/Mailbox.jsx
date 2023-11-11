@@ -67,17 +67,17 @@ function Mailbox() {
     try {
       if (time === "past") {
         const response = await axios.get(
-          `main/username/${user_id}/answer/past`
+          `main/username/${user_id}/answers/past`
         );
         setAnswerData(response.data);
       } else if (time === "present") {
         const response = await axios.get(
-          `main/username/${user_id}/answer/present`
+          `main/username/${user_id}/answers/present`
         );
         setAnswerData(response.data);
       } else if (time === "future") {
         const response = await axios.get(
-          `main/username/${user_id}/answer/future`
+          `main/username/${user_id}/answers/future`
         );
         setAnswerData(response.data);
       }
