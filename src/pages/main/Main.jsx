@@ -78,12 +78,17 @@ function Main() {
             </S.Future>
           </Link>
 
-          <Link to="/tree">
+          <Link
+            to="/tree"
+            state={{
+              user_id: user_id
+            }}
+          >
             <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
           </Link>
         </S.MainContent>
 
-        <Candle />
+        <Candle user_id={user_id} />
       </S.MainWrapper>
     </>
   );

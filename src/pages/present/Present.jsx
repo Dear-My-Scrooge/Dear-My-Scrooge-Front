@@ -14,6 +14,7 @@ function Present() {
   const { state } = useLocation();
   const nickname = state && state.nickname;
   const user_id = state && state.user_id;
+  const [questionId, setQuestionId] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -24,6 +25,7 @@ function Present() {
       const response = await axios.get(`main/question/present`);
       setData(response.data);
       console.log(response.data);
+      setQuestionId(response.data[0].id);
     } catch (e) {
       console.log(e);
     }
@@ -32,7 +34,12 @@ function Present() {
   return (
     <>
       <S.PresentWrapper>
-        <Head bgcolor={"#810006"} color={"#fff"} nickname={nickname} />
+        <Head
+          bgcolor={"#810006"}
+          color={"#fff"}
+          nickname={nickname}
+          user_id={user_id}
+        />
         <S.PresentQuestionWrapper>
           {data.length > 0 ? (
             <S.PresentQuestion>Q. {data[0].content}</S.PresentQuestion>
@@ -49,6 +56,7 @@ function Present() {
           right={"30px"}
           nickname={nickname}
           user_id={user_id}
+          question_id={questionId}
         />
         <S.SnowmanIcon src={SnowmanIcon} alt="눈사람 아이콘" />
       </S.PresentWrapper>

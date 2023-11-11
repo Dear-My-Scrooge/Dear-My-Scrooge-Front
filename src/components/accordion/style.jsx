@@ -80,6 +80,7 @@ export const AccordionAnswerContent = styled.div`
   font-size: 20px;
   font-weight: 400;
   line-height: 26.3px;
+  white-space: pre-line;
 `;
 
 export const AccordionAnswerWriter = styled.div`

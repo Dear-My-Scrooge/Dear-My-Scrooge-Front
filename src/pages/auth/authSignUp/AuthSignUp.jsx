@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import Candle from "../../../components/candle/Candle";
 import axios from "../../../api/axios";
 
 function AuthSignUp() {
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const user_id = state && state.user_id;
   const [user, setUser] = useState({
     email: "",
     nickname: "",
@@ -16,8 +19,6 @@ function AuthSignUp() {
   const [confirmPwd, setConfirmPwd] = useState("");
   const [passwordIsVaild, setpasswordIsVaild] = useState(false);
   const [pwdMatchMessage, setPwdMatchMessage] = useState("");
-
-  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -80,7 +81,9 @@ function AuthSignUp() {
     <>
       <S.AuthSignUpWrapper>
         <S.AuthSignUpContentWrapper>
-          <S.AuthSignUpHeader>디어 마이 스크루지</S.AuthSignUpHeader>
+          <Link to={`/${user_id}`}>
+            <S.AuthSignUpHeader>디어 마이 스크루지</S.AuthSignUpHeader>
+          </Link>
           <S.AuthSignUpTItle>회원가입을 해주세요</S.AuthSignUpTItle>
           {/* 닉네임 */}
           <S.SignUpInput
@@ -92,7 +95,6 @@ function AuthSignUp() {
             value={user.nickname}
             isvaild="true"
           />
-
           {/* 이메일 */}
           <S.SignUpInputForm onSubmit={handleSubmit}>
             <S.SignUpInput

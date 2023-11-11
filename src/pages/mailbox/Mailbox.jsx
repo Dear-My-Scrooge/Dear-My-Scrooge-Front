@@ -42,7 +42,7 @@ function Mailbox() {
   // 공유하기 버튼 클릭 시 말풍선 출력
   const handleShareClick = () => {
     // 주소에서 "mailbox" 부분을 제외한 주소 생성
-    const shareLink = `${window.location.origin}`;
+    const shareLink = `${window.location.origin}/${user_id}`;
 
     // 클립보드에 주소 복사
     const temp = document.createElement("input");
@@ -93,6 +93,7 @@ function Mailbox() {
           bgcolor={getBackgroundColor(time)}
           color={getColor(time)}
           nickname={nickname}
+          user_id={user_id}
         />
         <S.TimeTabWrapper color={getColor(time)}>
           <S.TimeTab

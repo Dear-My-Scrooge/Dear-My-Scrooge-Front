@@ -12,6 +12,7 @@ function Future() {
   const nickname = state && state.nickname;
   const [data, setData] = useState([]);
   const user_id = state && state.user_id;
+  const [questionId, setQuestionId] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -22,6 +23,7 @@ function Future() {
       const response = await axios.get(`main/question/future`);
       setData(response.data);
       console.log(response.data);
+      setQuestionId(response.data[0].id);
     } catch (e) {
       console.log(e);
     }
@@ -30,7 +32,12 @@ function Future() {
   return (
     <>
       <S.FutureWrapper>
-        <Head bgcolor={"#083A00"} color={"#fff"} nickname={nickname} />
+        <Head
+          bgcolor={"#083A00"}
+          color={"#fff"}
+          nickname={nickname}
+          user_id={user_id}
+        />
         {data.length > 0 ? (
           <S.FutureQuestion>Q. {data[0].content}</S.FutureQuestion>
         ) : (
@@ -44,6 +51,7 @@ function Future() {
           right={"30px"}
           nickname={nickname}
           user_id={user_id}
+          question_id={questionId}
         />
       </S.FutureWrapper>
     </>

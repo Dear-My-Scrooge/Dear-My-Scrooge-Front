@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../../components/candle/Candle";
 import axios from "../../../api/axios";
@@ -9,6 +9,8 @@ import Cookies from "js-cookie";
 
 function AuthLogin() {
   const navigate = useNavigate();
+  const { state } = useLocation();
+  const user_id = state && state.user_id;
   const [userInfo, setUserInfo] = useRecoilState(userState);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -78,7 +80,9 @@ function AuthLogin() {
     <>
       <S.AuthLoginWrapper>
         <S.AuthLoginWrapperContent>
-          <S.AuthLoginHeader>디어 마이 스크루지</S.AuthLoginHeader>
+          <Link to={`/${user_id}`}>
+            <S.AuthLoginHeader>디어 마이 스크루지</S.AuthLoginHeader>
+          </Link>
           <S.AuthLoginTItle>로그인 해주세요</S.AuthLoginTItle>
 
           <S.AuthForm onSubmit={handleSubmit}>

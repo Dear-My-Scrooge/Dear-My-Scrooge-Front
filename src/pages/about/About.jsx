@@ -1,17 +1,23 @@
 import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import * as S from "./style";
 import Candle from "../../components/candle/Candle";
 import ClickMeIcon from "../../assets/images/icon/clickMe.png";
 import CloseIcon from "../../assets/images/icon/x.png";
 
 function About() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { state } = useLocation();
+  const user_id = state && state.user_id;
 
   return (
     <>
       <S.AboutWrapper>
         <S.AboutContentWrapper>
-          <S.AboutTitle>디어 마이 스크루지</S.AboutTitle>
+          <Link to={`/${user_id}`}>
+            <S.AboutTitle>디어 마이 스크루지</S.AboutTitle>
+          </Link>
           <S.AboutContent>
             그들의 과거에게, <br />
             그들의 현재에게, <br />

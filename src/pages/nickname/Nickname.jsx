@@ -13,10 +13,6 @@ function Nickname() {
   const myNickname = state && state.nickname;
   const user_id = state && state.user_id;
   const question_id = state && state.question_id;
-  console.log("question_id" + question_id);
-  console.log("data" + data);
-  console.log("nickname" + nickname);
-  console.log("user_id" + user_id);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
@@ -52,7 +48,9 @@ function Nickname() {
     <>
       <S.NicknameWrapper>
         <S.NicknameContentWrapper>
-          <S.NicknameTitle>{myNickname}'s 스크루지</S.NicknameTitle>
+          <Link to={`/${user_id}`}>
+            <S.NicknameTitle>{myNickname}'s 스크루지</S.NicknameTitle>
+          </Link>
           <S.NicknameWho>누구라고 전달해줄까요?</S.NicknameWho>
           <S.NicknameForm onSubmit={handleSubmit}>
             <S.NicknameInputWrapper>
