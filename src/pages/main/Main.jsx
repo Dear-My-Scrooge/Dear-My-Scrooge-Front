@@ -7,6 +7,7 @@ import PastIcon from "../../assets/images/character/past.png";
 import PresentIcon from "../../assets/images/character/present.png";
 import FutureIcon from "../../assets/images/character/future.png";
 import Candle from "../../components/candle/Candle";
+import Cookies from "js-cookie";
 
 function Main() {
   // 데이터
@@ -21,7 +22,7 @@ function Main() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log("access " + localStorage.getItem("access"));
+
   const fetchData = async () => {
     try {
       const response = await axios.get(`auth/username/${user_id}`);
@@ -32,6 +33,9 @@ function Main() {
       console.log(e);
     }
   };
+
+  console.log("access " + localStorage.getItem("access"));
+  console.log("cookies " + Cookies.get("access"));
 
   return (
     <>
