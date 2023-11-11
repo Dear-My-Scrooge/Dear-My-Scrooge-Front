@@ -18,7 +18,8 @@ function Main() {
   const parts = url.split("/");
   const lastPart = parts[parts.length - 1];
   const user_id = lastPart;
-  const cookie = Cookies.get("refresh");
+
+  const cookie = Cookies.get("access");
 
   useEffect(() => {
     fetchData();
@@ -34,8 +35,6 @@ function Main() {
       console.log(e);
     }
   };
-
-  console.log("cookies: " + cookie);
 
   return (
     <>
@@ -82,7 +81,7 @@ function Main() {
             </S.Future>
           </Link>
 
-          {cookie && (
+          {!cookie && (
             <Link
               to="/tree"
               state={{
