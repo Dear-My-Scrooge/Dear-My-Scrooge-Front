@@ -21,7 +21,7 @@ function Main() {
   useEffect(() => {
     fetchData();
   }, []);
-
+  console.log("access " + localStorage.getItem("access"));
   const fetchData = async () => {
     try {
       const response = await axios.get(`auth/username/${user_id}`);
