@@ -32,7 +32,7 @@ function About() {
           />
         </S.AboutContentWrapper>
 
-        <Candle />
+        <Candle user_id={user_id} />
 
         {isModalOpen && (
           <>

@@ -66,7 +66,7 @@ function Nickname() {
           </S.NicknameForm>
         </S.NicknameContentWrapper>
 
-        <Candle />
+        <Candle user_id={user_id} />
       </S.NicknameWrapper>
     </>
   );
