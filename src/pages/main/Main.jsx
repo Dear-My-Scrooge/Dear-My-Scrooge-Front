@@ -18,6 +18,7 @@ function Main() {
   const parts = url.split("/");
   const lastPart = parts[parts.length - 1];
   const user_id = lastPart;
+  const cookie = Cookies.get("refresh");
 
   useEffect(() => {
     fetchData();
@@ -34,8 +35,7 @@ function Main() {
     }
   };
 
-  console.log("access " + localStorage.getItem("access"));
-  console.log("cookies " + Cookies.get("access"));
+  console.log("cookies: " + cookie);
 
   return (
     <>
@@ -82,14 +82,16 @@ function Main() {
             </S.Future>
           </Link>
 
-          <Link
-            to="/tree"
-            state={{
-              user_id: user_id
-            }}
-          >
-            <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
-          </Link>
+          {cookie && (
+            <Link
+              to="/tree"
+              state={{
+                user_id: user_id
+              }}
+            >
+              <S.CreatePage>내 스크루지 페이지로 이동</S.CreatePage>
+            </Link>
+          )}
         </S.MainContent>
 
         <Candle user_id={user_id} />
