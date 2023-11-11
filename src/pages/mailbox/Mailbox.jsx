@@ -116,7 +116,7 @@ function Mailbox() {
           </S.TimeTab>
         </S.TimeTabWrapper>
         <Accordion data={answerData} />
-        <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
+
         <S.MailboxWriterWrapper
           to={`/${time.toLowerCase()}`}
           state={{

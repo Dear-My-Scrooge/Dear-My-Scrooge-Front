@@ -1,7 +1,16 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import MainBackGroundImg from "../../assets/images/background/main.png";
 
-
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const MainWrapper = styled.div`
   width: 100%;
@@ -148,4 +157,5 @@ export const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: ${fadeInAnimation} 1s ease-in-out;
 `;
