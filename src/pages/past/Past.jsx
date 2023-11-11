@@ -13,6 +13,7 @@ function Past() {
   const { state } = useLocation();
   const nickname = state && state.nickname;
   const user_id = state && state.user_id;
+  const [questionId, setQuestionId] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -23,6 +24,7 @@ function Past() {
       const response = await axios.get(`main/question/past`);
       setData(response.data);
       console.log(response.data);
+      setQuestionId(response.data[0].id);
     } catch (e) {
       console.log(e);
     }
@@ -46,6 +48,7 @@ function Past() {
           right={"5px"}
           nickname={nickname}
           user_id={user_id}
+          question_id={questionId}
         />
         <S.SocksIcon src={SocksIcon} alt="양말 아이콘" />
       </S.PastWrapper>

@@ -6,6 +6,7 @@ import FutureIcon from "../../assets/images/character/future.png";
 function Send(props) {
   const [inputContent, setInputContent] = useState("");
   const [inputCount, setInputCount] = useState(0);
+  console.log(props.question_id);
 
   const onInputHandler = e => {
     setInputCount(e.target.value.length);
@@ -35,7 +36,8 @@ function Send(props) {
             state={{
               data: inputContent,
               nickname: props.nickname,
-              user_id: props.user_id
+              user_id: props.user_id,
+              question_id: props.question_id
             }}
           >
             <S.SendButtonWrapper>

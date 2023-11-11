@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import * as S from "./style";
 import Head from "../../components/head/Head";
+import axios from "../../api/axios";
+
 import PastBg from "../../assets/images/background/mailboxPast.png";
 import PresentBg from "../../assets/images/background/mailboxPresent.png";
 import FutureBg from "../../assets/images/background/mailboxFuture.png";
@@ -18,6 +20,7 @@ function Mailbox() {
 
   const [time, setTime] = useState(data);
   const [showShareAlert, setShowShareAlert] = useState(false);
+  const [answerData, setAnswerData] = useState([]);
 
   const getBackgroundColor = time => {
     if (time === "past") return "#F0D890";
@@ -56,6 +59,33 @@ function Mailbox() {
     }, 2000);
   };
 
+  useEffect(() => {
+    fetchAnswerData();
+  }, [time]);
+
+  const fetchAnswerData = async () => {
+    try {
+      if (time === "past") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/past`
+        );
+        setAnswerData(response.data);
+      } else if (time === "present") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/present`
+        );
+        setAnswerData(response.data);
+      } else if (time === "future") {
+        const response = await axios.get(
+          `main/username/${user_id}/answer/future`
+        );
+        setAnswerData(response.data);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <S.MailboxWrapper bgimg={setBackgroundImg(time)}>
@@ -84,11 +114,14 @@ function Mailbox() {
             미래
           </S.TimeTab>
         </S.TimeTabWrapper>
-        <Accordion />
+        <Accordion data={answerData} />
         <Accordion /> <Accordion /> <Accordion /> <Accordion /> <Accordion />
         <S.MailboxWriterWrapper
           to={`/${time.toLowerCase()}`}
-          state={{ nickname: nickname, user_id: user_id }}
+          state={{
+            nickname: nickname,
+            user_id: user_id
+          }}
         >
           <S.MailboxWriterIcon src={WriteIcon} alt="작성 아이콘" />
 

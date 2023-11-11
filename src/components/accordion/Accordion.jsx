@@ -2,48 +2,66 @@ import React, { useState } from "react";
 import * as S from "./style";
 import MoreIcon from "../../assets/images/icon/more.png";
 
-function Accordion() {
-  const [show, setShow] = useState(false);
+function Accordion({ data }) {
+  const [show, setShow] = useState(data ? Array(data.length).fill(false) : []);
 
-  const handleShowMore = () => {
-    setShow(!show);
+  const handleShowMore = index => {
+    const newShow = [...show];
+    newShow[index] = !newShow[index];
+    setShow(newShow);
   };
+
+  if (!data) {
+    return <></>;
+  }
 
   return (
     <>
       <S.AccordionWrapper>
-        <S.AccordionQuestionWrapper
-          onClick={handleShowMore}
-          className={show ? "show" : "hide"}
-        >
-          <S.AccordionQuestion>
-            Q. 과거 수연의 첫 수연의 첫 인상은?
-          </S.AccordionQuestion>
-          <S.AccordionMoreButton>
-            <S.AccordionMoreButtonImg
-              src={MoreIcon}
-              className={show ? "show" : "hide"}
-            />
-          </S.AccordionMoreButton>
-        </S.AccordionQuestionWrapper>
+        {data.map((question, index) => (
+          <S.MapWrapper key={question.question_id}>
+            <S.AccordionQuestionWrapper
+              onClick={() => handleShowMore(index)}
+              className={show[index] ? "show" : "hide"}
+            >
+              <S.AccordionQuestion>Q. {question.content}</S.AccordionQuestion>
+              <S.AccordionMoreButton>
+                <S.AccordionMoreButtonImg
+                  src={MoreIcon}
+                  className={show[index] ? "show" : "hide"}
+                />
+              </S.AccordionMoreButton>
+            </S.AccordionQuestionWrapper>
 
-        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
-          <S.AccordionAnswer>
-            <S.AccordionAnswerContent>
-              발랄했다! 지금도 역시 그렇다.지금도 역시 그렇다.지금도 역시
-              그렇다.지금도 역시 그렇다.지금도 역시 그렇다.
-            </S.AccordionAnswerContent>
-            <S.AccordionAnswerWriter>- 작심이 -</S.AccordionAnswerWriter>
-          </S.AccordionAnswer>
-        </S.AccordionAnswerWrapper>
-
-        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
-          <S.AccordionAnswer>발랄했다. s - 작심이 -</S.AccordionAnswer>
-        </S.AccordionAnswerWrapper>
-
-        <S.AccordionAnswerWrapper className={show ? "show" : "hide"}>
-          <S.AccordionLastAnswer>발랄했다. s - 작심이 -</S.AccordionLastAnswer>
-        </S.AccordionAnswerWrapper>
+            {question.answers.map((answer, ansIndex) => (
+              <S.AccordionAnswerWrapper
+                key={answer.answer_id}
+                className={
+                  show[index] && ansIndex === question.answers.length - 1
+                    ? "show last"
+                    : show[index]
+                    ? "show"
+                    : "hide"
+                }
+              >
+                <S.AccordionAnswer
+                  className={
+                    ansIndex === question.answers.length - 1
+                      ? "AccordionLastAnswer"
+                      : ""
+                  }
+                >
+                  <S.AccordionAnswerContent>
+                    {answer.content}
+                  </S.AccordionAnswerContent>
+                  <S.AccordionAnswerWriter>
+                    - {answer.writer} -
+                  </S.AccordionAnswerWriter>
+                </S.AccordionAnswer>
+              </S.AccordionAnswerWrapper>
+            ))}
+          </S.MapWrapper>
+        ))}
       </S.AccordionWrapper>
     </>
   );

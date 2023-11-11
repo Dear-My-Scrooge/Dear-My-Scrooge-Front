@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 export const AccordionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
 `;
 
 export const AccordionQuestionWrapper = styled.div`
@@ -20,6 +19,7 @@ export const AccordionQuestionWrapper = styled.div`
     border-radius: 16px 16px 0px 0px;
   }
   cursor: pointer;
+  margin-top: 20px;
 `;
 
 export const AccordionQuestion = styled.div`
@@ -62,6 +62,17 @@ export const AccordionAnswer = styled.div`
   font-weight: 400;
   line-height: 26.3px;
   padding: 10px 20px;
+  &.AccordionLastAnswer {
+    width: 325px;
+    border-bottom: 0.7px solid rgba(0, 0, 0, 0.5);
+    background: #e5e5e5;
+    border-radius: 0px 0px 16px 16px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.3px;
+    padding: 10px 20px;
+  }
 `;
 
 export const AccordionAnswerContent = styled.div`
@@ -89,3 +100,5 @@ export const AccordionLastAnswer = styled.div`
   line-height: 26.3px;
   padding: 10px 20px;
 `;
+
+export const MapWrapper = styled.div``;
