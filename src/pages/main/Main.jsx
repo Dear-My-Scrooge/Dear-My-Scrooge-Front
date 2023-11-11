@@ -18,6 +18,7 @@ function Main() {
   const parts = url.split("/");
   const lastPart = parts[parts.length - 1];
   const user_id = lastPart;
+  const cookie2 = Cookies.get("access");
   const cookie = Cookies.get("refresh");
 
   useEffect(() => {
@@ -36,6 +37,7 @@ function Main() {
   };
 
   console.log("cookies: " + cookie);
+  console.log("cookie2" + cookie2);
 
   return (
     <>
