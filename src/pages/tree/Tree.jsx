@@ -13,7 +13,12 @@ function Tree() {
   return (
     <>
       <S.MainWrapper>
-        <Link to="/about">
+        <Link
+          to="/about"
+          state={{
+            user_id: user_id
+          }}
+        >
           <S.GhostIcon src={GhostIcon} alt="고스트 아이콘" />
         </Link>
 
